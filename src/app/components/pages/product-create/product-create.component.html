@@ -1,0 +1,55 @@
+<div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card-body">
+            <h4>Cadastre sua conta de cliente:</h4>
+            <p>Preencha o formulário para criar sua conta</p>
+            <hr />
+            <div *ngIf="mensagem" class="mb-3 mt-3 alert alert-secondary
+            alert-dismissible fade show" role="alert">
+              <button type="button" (click)="mensagem = ''" class="btn-close" aria-label="Close"></button>
+              <strong>{{mensagem}}</strong>
+            </div>
+            <form [formGroup]="FormAtendimento">
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label>nome:</label>
+                      <input type="date" class="form-control" formControlName="data"/>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label>Preco:</label>
+                      <input type="number" class="form-control" formControlName="hora"/>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label>Assunto:</label>
+                      <input type="text" class="form-control" formControlName="assunto"/>
+                    </div>
+                  </div>
+
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label>Observacoes:</label>
+                      <input type="text" class="form-control" formControlName="observacoes"/>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label>Email:</label>
+                      <input type="text" class="form-control" formControlName="emailCliente"/>
+                    </div>
+                  </div>
+
+                  <input type="submit" class="btn btn-primary" (click)="salvar()" value="Realizar Cadastro" />
+
+            </form>
+        </div>
+    </div>
+</div>

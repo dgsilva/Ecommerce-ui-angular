@@ -1,0 +1,31 @@
+    <div class="row">
+
+        <div class="col-md-4" *ngFor="let item of produtos">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                    <img src="{{item.foto}}" class="img-fluid" height="200">
+                </div>
+                    <h4 class="mt-3">{{item.nome}}</h4>
+                    <h5 class="mt-3">{{item.preco | currency : 'BRL'}}</h5>
+                    
+                    <p class=" card-text">
+                        Quantidade disponível: {{item.quantidade}}
+                    </p>
+
+                    <div class="badge bg-secondary">
+                      <span>{{item.categoria.nome}}</span>
+                    </div>
+
+                    <p class="mt-2 " style="min-height: 50px;">
+                        <small>{{item.descricao}}</small>
+                    </p>
+                    <div class="d-grid">
+                        <button [routerLink]="['/carrinho-de-compras']" class="btn btn-primary">
+                            Comprar 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
